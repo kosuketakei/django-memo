@@ -1,2 +1,0 @@
-PythonAnyWhere用のシンプルメモwebアプリ
-
