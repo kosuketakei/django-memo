@@ -6,7 +6,7 @@ from users.models import User
 class Item(models.Model):
 
 
-    # サンプル項目1 文字列
+    #タイトル
     title = models.CharField(
         verbose_name='タイトル',
         max_length=20,
@@ -14,14 +14,14 @@ class Item(models.Model):
         null=True,
     )
 
-    # サンプル項目2 メモ
+    #メモ
     memo = models.TextField(
         verbose_name='メモ',
         blank=True,
         null=True,
     )
 
-    # サンプル項目7 日付
+    #日付
     date = models.DateField(
         verbose_name='日付',
         blank=True,
@@ -30,13 +30,7 @@ class Item(models.Model):
 
 
 
-    
-
-
-
-    # 以下、管理項目
-
-    # 作成者(ユーザー)
+    #作成者
     created_by = models.ForeignKey(
         User,
         verbose_name='作成者',
@@ -47,7 +41,7 @@ class Item(models.Model):
         editable=False,
     )
 
-    # 作成時間
+    #作成時間
     created_at = models.DateTimeField(
         verbose_name='作成時間',
         blank=True,
@@ -55,7 +49,7 @@ class Item(models.Model):
         editable=False,
     )
 
-    # 更新者(ユーザー)
+    #更新者
     updated_by = models.ForeignKey(
         User,
         verbose_name='更新者',
