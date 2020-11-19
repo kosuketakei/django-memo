@@ -29,6 +29,18 @@ class Item(models.Model):
     )
 
 
+
+    #作成者
+    created_by = models.ForeignKey(
+        User,
+        verbose_name='作成者',
+        blank=True,
+        null=True,
+        related_name='CreatedBy',
+        on_delete=models.SET_NULL,
+        editable=False,
+    )
+
     #作成時間
     created_at = models.DateTimeField(
         verbose_name='作成時間',
@@ -37,7 +49,24 @@ class Item(models.Model):
         editable=False,
     )
 
+    #更新者
+    updated_by = models.ForeignKey(
+        User,
+        verbose_name='更新者',
+        blank=True,
+        null=True,
+        related_name='UpdatedBy',
+        on_delete=models.SET_NULL,
+        editable=False,
+    )
 
+    # 更新時間
+    updated_at = models.DateTimeField(
+        verbose_name='更新時間',
+        blank=True,
+        null=True,
+        editable=False,
+    )
 
     def __str__(self):
 
